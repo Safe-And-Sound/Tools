@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry location="lib/mysql-connector-java-5.1.18.jar" />
+	<classPathEntry location="lib/sqljdbc4.jar" />
+	<classPathEntry location="lib/ojdbc6.jar" />
+
+	<context id="sqlTables" targetRuntime="MyBatis3">
+<!-- 		<plugin type="org.mybatis.generator.plugins.MySqlPaginationPlugin" /> -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/lms" userId="root"
+			password="root">
+		</jdbcConnection>
+
+ 
+<!-- 		<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+			connectionURL="jdbc:sqlserver://192.168.13.100:1433;DatabaseName=motelmall" userId="sa"
+			password="Ssyt123456">
+		</jdbcConnection> -->
+
+ <!-- 
+ <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:orcl" userId="qiyang"
+			password="qiyang">
+		</jdbcConnection>
+  -->
+		
+
+		<javaTypeResolver type="org.mybatis.generator.plugins.OracleJavaTypeResolver">
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.ssyt.lms.po"
+			targetProject="src\main\java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.ssyt.lms.po"
+			targetProject="src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.ssyt.lms.mapper" targetProject="src\main\java">
+			<property name="enableSubPackages" value="true" />
+			<property name="suppressAllComments" value="true" />
+			<property name="suppressDate" value="true" />
+		</javaClientGenerator>
+
+		<table schema="" tableName="carrier_info" domainObjectName="CarrierInfo">
+<!-- 			<generatedKey column="typeid" sqlStatement="MySql" identity="true" /> -->
+			<columnRenamingRule searchString="^sys_" replaceString="" />
+		</table>
+		<table schema="" tableName="concat_info" domainObjectName="ConcatInfo">
+			<columnRenamingRule searchString="^sys_" replaceString="" />
+		</table>
+		<table schema="" tableName="driver_info" domainObjectName="DriverInfo">
+			<columnRenamingRule searchString="^sys_" replaceString="" />
+		</table>
+		<table schema="" tableName="goods_info" domainObjectName="GoodsInfo">
+			<columnRenamingRule searchString="^sys_" replaceString="" />
+		</table>
+		<table schema="" tableName="log_info" domainObjectName="LogInfo">
+			<columnRenamingRule searchString="^sys_" replaceString="" />
+		</table>
+		<table schema="" tableName="right_info" domainObjectName="RightInfo">
+			<columnRenamingRule searchString="^sys_" replaceString="" />
+		</table>
+		<table schema="" tableName="role_info" domainObjectName="RoleInfo">
+			<columnRenamingRule searchString="^sys_" replaceString="" />
+		</table>
+		<table schema="" tableName="roleright_info" domainObjectName="RolerightInfo">
+			<columnRenamingRule searchString="^sys_" replaceString="" />
+		</table>
+		<table schema="" tableName="schedule_info" domainObjectName="ScheduleInfo">
+			<columnRenamingRule searchString="^sys_" replaceString="" />
+		</table>
+		<table schema="" tableName="state_info" domainObjectName="StateInfo">
+			<columnRenamingRule searchString="^sys_" replaceString="" />
+		</table>
+		<table schema="" tableName="truck_info" domainObjectName="TruckInfo">
+			<columnRenamingRule searchString="^sys_" replaceString="" />
+		</table>
+		<table schema="" tableName="truckteam_info" domainObjectName="TruckteamInfo">
+			<columnRenamingRule searchString="^sys_" replaceString="" />
+		</table>
+		<table schema="" tableName="trucktype_info" domainObjectName="TrucktypeInfo">
+			<columnRenamingRule searchString="^sys_" replaceString="" />
+		</table>
+		<table schema="" tableName="user_info" domainObjectName="UserInfo">
+			<columnRenamingRule searchString="^sys_" replaceString="" />
+		</table>
+		<table schema="" tableName="userrole_info" domainObjectName="UserroleInfo">
+			<columnRenamingRule searchString="^sys_" replaceString="" />
+		</table>
+	</context>
+</generatorConfiguration>
